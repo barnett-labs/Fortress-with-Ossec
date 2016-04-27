@@ -1,4 +1,4 @@
-# Fortress
+# Fortress with OSSEC
 
 This script will auto install and configure:
 
