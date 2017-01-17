@@ -31,7 +31,7 @@ It will also install and configure the minor required dependencies:
 	8. python-tk-dbg
 	9. clamav-daemon
 	
-The script will also pull two files furrently on barnett-labs.com for the install (future pull from github)
+The script will also pull two files currently on barnett-labs.com for the install (future pull from github)
 
 	1. clamav-scan.sh 	#Pre-configured virus scan with email report. 
 	2. clamd.conf  		#Pre-configured .conf file to streamline installation process.
