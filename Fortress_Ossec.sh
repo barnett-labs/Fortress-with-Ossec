@@ -94,7 +94,7 @@ force:
 	apt-key adv --fetch-keys http://ossec.wazuh.com/repos/apt/conf/ossec-key.gpg.key
 
 #Add the ossec repository :
-	echo 'deb http://ossec.wazuh.com/repos/apt/ubuntu precise main' >> /etc/apt/sources.list
+	echo 'deb http://ossec.wazuh.com/repos/apt/ubuntu bionic main' >> /etc/apt/sources.list
 
 #Update the repository and install pre-reqs:
 	apt-get update
@@ -113,7 +113,7 @@ force:
 	sed -i 's/#EVENTSSUBJECT="System Events"/EVENTSSUBJECT="System Events"/g' /etc/logcheck/logcheck.conf
 
 #Configure ClamAV
-	#dpkg-reconfigure clamav-base (Depreciated in this script)
+	#dpkg-reconfigure clamav-base (Depricated in this script)
 	wget http://barnett-labs.com/Software/clamd.conf
 	wget https://barnett-labs.com/Software/freshclam.conf
 	mv clamd.conf /etc/clamav/
