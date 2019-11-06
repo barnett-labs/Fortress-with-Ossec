@@ -29,16 +29,22 @@
 ###################################################################################
 ###################################################################################
 #
-#Version 1.03
 #
+#Version 1.04 11052019
+#Updated to reflect new OSSEC repositories and GPG Key
+#
+#
+#
+#Version 1.03
 #Minor bugifxes#
 #
 #
+#
 #Version 1.02
-#
 #Features: Auto updates and installs ClamAV, PortSentry, OSSEC, and UFW
-#
 #Future: UFW is planned for future versions(Now Implemented)
+#
+#
 #
 #
 #
@@ -91,10 +97,10 @@ force:
 	read emailadd
 
 #Install the ossec apt-get repository key:
-	apt-key adv --fetch-keys http://ossec.wazuh.com/repos/apt/conf/ossec-key.gpg.key
+	wget -q -O - https://www.atomicorp.com/RPM-GPG-KEY.atomicorp.txt  | apt-key add -
 
 #Add the ossec repository :
-	echo 'deb http://ossec.wazuh.com/repos/apt/ubuntu bionic main' >> /etc/apt/sources.list
+	echo "deb https://updates.atomicorp.com/channels/atomic/ubuntu bionic main" >>  /etc/apt/sources.list.d/atomic.list
 
 #Update the repository and install pre-reqs:
 	apt-get update
@@ -152,7 +158,7 @@ force:
 
 
 #Install OSSEC HIDS server/manager:
-	apt-get -y install ossec-hids
+	apt-get -y install ossec-hids-server
 
 #Install OSSEC Web UI
 	wget https://barnett-labs.com/Software/ossec-wui-0.3.tar.gz
